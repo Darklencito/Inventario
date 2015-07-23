@@ -9,6 +9,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
  
 RewriteRule inicio(.*) ../index.php$1
 RewriteRule asignarE(.*) asignaciones.php$1
+RewriteRule	regisA(.*) RegistarArticulos.php$1
 RewriteRule asignarR(.*) regAsignaciones.php$1
 RewriteRule creasig(.*) crearAsignacion.php$1
 RewriteRule inventG(.*) inventariogeneral.php$1

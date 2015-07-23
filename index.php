@@ -42,46 +42,56 @@ if($_SESSION)
 	}
 	</script>
 </head>
-
-<body onLoad="load_em()" background="img/index.jpg" style="background-position: center; background-attachment: fixed; background-repeat:no-repeat; background-size:100%;">
-	<nav>
-    </nav>
-    <div style="margin-top:8%; margin-left:38%; background-image:url(img/login.png); padding:10px 100px 10px 100px; max-width:700px; border-radius:20px; box-shadow: 0 0 5px 5px #888;">
-    <h2>Sistema Inventario</h2>
-        <form class="form-horizontal" role="form" action="php/acceso.php" method="post">
-          <div class="form-group">
-            <label class="col-lg-2 control-label">Usuario</label>
-            <div class="col-lg-10">
-            <div class="input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input id="username" type="text" name="Usuario" class="form-control" placeholder="Introduzca Usuario" required>
-            </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-2 control-label">Contraseña</label>
-            <div class="col-lg-10">
-            <div class="input-group">
-           <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input id="password" type="password" name="Pass" class="form-control" placeholder="Introduzca Contraseña" required>
-            </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
-              <div class="checkbox">
-                <label>
-                  <input id="check" type="checkbox"> Recordar contraseña
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
-              <button onClick="remember_me()" type="submit" class="btn btn-default">Entrar</button>
-            </div>
-          </div>
-        </form>
+  <body>
+<div class="container" style="margin-top:150px;">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Acceso</h3>
         </div>
-</body>
+          <div class="panel-body">
+          <?php
+if (isset($_GET['error'])) {
+    echo '
+              <div class="alert alert-danger-alt alert-dismissable">
+                <span class="glyphicon glyphicon-certificate"></span>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    ×</button><strong>Acceso Denegado</strong> Revise que sus datos de acceso al sistema sean correctos y vuelva a intentarlo.</div>   
+
+    ';
+} else {
+    echo '';
+}
+?>
+            <form accept-charset="UTF-8" role="form" method="POST" action="php/acceso.php">
+                    <fieldset>
+                <div class="form-group">
+                 <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="username" type="text" class="form-control" name="Usuario" value="" placeholder="Usuario" required>                                        
+                                    </div>
+              </div>
+              <div class="form-group">
+                <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="password" type="text" class="form-control" name="Pass" value="" placeholder="Password" required>                                        
+                                    </div>
+              </div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Iniciar sesión">
+            </fieldset>
+              </form>
+              <p></p>
+               <a class="btn btn-lg btn-info btn-block" href="registro.php">Registrarme</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>

@@ -166,6 +166,7 @@
               Opciones
             </a></li>
             <!--<li><a href="#modalregistroarticulos" data-toggle="modal">Registrar Articulos</a></li>-->
+            <li><a href="#modalregistroarticulos" data-toggle="modal">Registrar Articulos</a></li>
             <li><a href="#modalnuevacategoria"  data-toggle="modal">Nueva Categoria</a></li>
             <li><a href="#"  OnClick="Categorias();">Administrar Categorias</a></li>
             <li><a href="#modalnuevamarca"  data-toggle="modal">Nuevo Marca</a></li>
